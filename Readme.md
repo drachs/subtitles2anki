@@ -17,10 +17,18 @@ These tokenized files will be stored in data/tokenized/{show}/{episode_name}.srt
 These token files will be as raw as possible while being clearly not subject to copyright.  The format I have chosen is a csv 
 database in the following form sorted by frequency descending: 
 
-surface,reading,pos,frequency
+surface,reading,romaji,pos,frequency
+
+surface: How the word appeared in the subtitles
+reading: hiragana reading of the word
+romaji: The surface represented in romaji
+pos: Japanese part of speech
+frequency: How often the word appeared in the show
+
+These files will contain all kinds of stuff that should probably be filtered out, but the filtering might be the subject of many interesting
+pull requests so I'd like to commit the raw ugly data here so we can all inovate on good filter.  Examples of uglyness in these files
+include english words, symbols, punctuation, etc.
 
 ## Step 3 - Filtering
-These files will contain all kinds of stuff that should probably be filtered out, but the filtering might be the subject of many interesting
-pull requests so I'd like to commit some raw ugly data here so we can all inovvate on good filter.  Examples of uglyness in these files
-include english words, symbols, etc.
+
 
