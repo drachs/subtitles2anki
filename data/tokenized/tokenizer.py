@@ -9,6 +9,7 @@ import pandas as pd
 import sys
 import re
 import os
+from pykakasi import kakasi
 
 def load_manifest(show):
     with open(f"../subtitles/{show}/manifest.txt", "r") as f:
@@ -43,17 +44,25 @@ def tokenize_text(text):
         surface = parts[0]  # Surface form
         reading = parts[1]  # Reading
         pos = parts[4]  # Part-of-speech
+
+        tmp = kks.convert(surface)
+        if len(tmp) > 0:
+            romaji = tmp[0]['hepburn']
+        else:
+            romaji = surface
         
-        parsed_rows.append((surface, reading, pos))
-        
-    df = pd.DataFrame(parsed_rows, columns=['surface', 'reading', 'pos'])
+        parsed_rows.append((surface, reading, romaji, pos))
+    
+    df = pd.DataFrame(parsed_rows, columns=['surface', 'reading', 'romaji', 'pos'])
     return df
 
 def cleanup(df):
-    df = df.groupby(["surface", "reading", "pos"]).size().reset_index(name="frequency")
+    df = df.groupby(["surface", "reading", "romaji", "pos"]).size().reset_index(name="frequency")
     df = df.sort_values(by="frequency", ascending=False)
     
     return df
+
+kks = kakasi()
 
 show = sys.argv[1]
 files = load_manifest(show)
