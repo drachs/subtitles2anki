@@ -40,6 +40,15 @@ my_model = genanki.Model(
       ''',
     },
   ],
+  css='''
+    .card {
+      font-family: arial;
+      font-size: 30px;
+      text-align: center;
+      color: black;
+      background-color: white;
+      }
+  ''',
 )
 
 def load_manifest(show):
@@ -71,7 +80,6 @@ for file in files:
         if audio_filename not in audio_files:
             if not os.path.exists(audio_filename):
                 print(f"Could not find {audio_filename}")
-            print(f"Adding {audio} for {audio_filename}")
             audio_files.append(audio_filename)
 
         my_note = genanki.Note(
