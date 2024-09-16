@@ -93,7 +93,7 @@ for file in files:
 
     current_files += 1
     if current_files >= max_files:
-        printf("Reached max files, only doing {max_files} files per run")
+        print("Reached max files, only doing {max_files} files per run")
         sys.exit(0)
     
 
