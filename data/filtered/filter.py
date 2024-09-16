@@ -14,6 +14,9 @@ def filters(df):
     # Filter out anything that's only ascii (Probably english words)
     df = df[~df['surface'].str.contains(r'^[\x00-\x7F]+$', na=False)]
 
+    # Filter out any row where pos is a particle (助詞)
+    df = df[~df['pos'].str.contains(r'^助詞', na=False)]
+
     # Filter out any row where a column is NaN
     df = df.dropna()
     return df

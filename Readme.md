@@ -26,6 +26,9 @@ incremental Anki decks for following shows.  The first show I'm going to use to 
 | 14 | 141
 | 15 | 96
 
+## Todo
+* ~~Eliminate Particles - I don't think flashcards are a good way to learn particles and it's very unsatisfying~~
+
 ## Deck Generation
 
 ### Step 1 - Subtitles are obtained and stationed in the subtitles folder

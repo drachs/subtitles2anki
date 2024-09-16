@@ -13,7 +13,6 @@ surface,reading,romaji,pos,frequency
 ごはん,ゴハン,gohan,名詞-普通名詞-一般,3
 ｻｸﾗ,ｻｸﾗ,sakura,名詞-普通名詞-一般,3
 組む,クム,kumu,動詞-一般,3
-なんて,ナンテ,nante,助詞-副助詞,3
 デコ,デコ,deko,名詞-普通名詞-一般,3
 もらい,モライ,morai,動詞-非自立可能,3
 下る,クダル,kudaru,動詞-一般,3
@@ -201,7 +200,6 @@ surface,reading,romaji,pos,frequency
 かげん,カゲン,kagen,名詞-普通名詞-サ変可能,1
 お,オ,o,感動詞-一般,1
 おとなしく,オトナシク,otonashiku,形容詞-一般,1
-ちょ,チョ,cho,助詞-終助詞,1
 ちゃい,チャイ,chai,助動詞,1
 ちくしょう,チクショー,chikushou,名詞-普通名詞-一般,1
 だら,ダラ,dara,助動詞,1
@@ -209,7 +207,6 @@ surface,reading,romaji,pos,frequency
 おもしろ,オモシロ,omoshiro,形容詞-一般,1
 おもしろく,オモシロク,omoshiroku,形容詞-一般,1
 くぅ,クー,kuu,感動詞-一般,1
-かしら,カシラ,kashira,助詞-終助詞,1
 かなう,カナウ,kanau,動詞-一般,1
 たまる,タマル,tamaru,動詞-一般,1
 かなり,カナリ,kanari,副詞,1
@@ -256,7 +253,6 @@ surface,reading,romaji,pos,frequency
 デブ,デブ,debu,名詞-普通名詞-形状詞可能,1
 アカデミー,アカデミー,akademii,名詞-普通名詞-一般,1
 よ,ヨ,yo,形容詞-非自立可能,1
-や,ヤ,ya,助詞-終助詞,1
 めんどく,メンドク,mendoku,形容詞-一般,1
 めでたく,メデタク,medetaku,形容詞-一般,1
 みてぇ,ミテー,mitee,形状詞-助動詞語幹,1

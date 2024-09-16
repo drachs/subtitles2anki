@@ -31,7 +31,11 @@ current_files = 0
 
 for file in files:
     load_filename = f"../enriched/{show}/{file}.csv"
-    # if save_filename already exists, skip
+    
+    # If load_filename does not exist, exit
+    if not os.path.exists(load_filename):
+        print(f"File {load_filename} does not exist")
+        sys.exit(1)
 
     print(f"Generating audio data for {load_filename}")
     

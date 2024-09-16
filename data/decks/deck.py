@@ -35,8 +35,8 @@ my_model = genanki.Model(
       'afmt': '''
         {{FrontSide}}
         <hr id="answer">
-        <div>{{ShortTranslation}}</div>
-        <div>{{DetailedTranslation}}</div>
+        <div class="short-answer">{{ShortTranslation}}</div>
+        <div class="detailed-answer">{{DetailedTranslation}}</div>
       ''',
     },
   ],
@@ -46,8 +46,17 @@ my_model = genanki.Model(
       font-size: 30px;
       text-align: center;
       color: black;
-      background-color: white;
+
       }
+
+    .short-answer {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .detailed-answer {
+      color: blue;
+    }
   ''',
 )
 
@@ -62,10 +71,11 @@ for file in files:
     load_filename = f"../enriched/{show}/{file}.csv"
     save_filename = f"{show}/{file}.apkg"
     deck_id = (hash(save_filename)%100000000)+(1 << 30)+10000
-    # if save_filename already exists, skip
-    if os.path.exists(save_filename):
-        print(f"Skipping {save_filename} as it already exists")
-        continue
+
+    # If load_filename does not exist, exit
+    if not os.path.exists(load_filename):
+        print(f"File {load_filename} does not exist")
+        sys.exit(1)
 
     print(f"Generating Deck from {load_filename} and saving to {save_filename}")
     

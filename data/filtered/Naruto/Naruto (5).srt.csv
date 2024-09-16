@@ -98,7 +98,6 @@ surface,reading,romaji,pos,frequency
 聞く,キク,kiku,動詞-一般,1
 やっ,ヤッ,yatsu,感動詞-一般,1
 やい,ヤイ,yai,感動詞-一般,1
-もん,モン,mon,助詞-終助詞,1
 じゃあ,ジャー,jaa,接続詞,1
 むだ話,ムダバナシ,muda,名詞-普通名詞-一般,1
 みそ,ミソ,miso,名詞-普通名詞-一般,1
@@ -114,12 +113,10 @@ surface,reading,romaji,pos,frequency
 よさ,ヨサ,yosa,形容詞-非自立可能,1
 ようやく,ヨーヤク,youyaku,副詞,1
 ま,マ,ma,記号-一般,1
-だって,ダッテ,datte,助詞-接続助詞,1
 ちまえ,チマエ,chimae,助動詞,1
 なお,ナオ,nao,副詞,1
 ちょ,チョ,cho,副詞,1
 っこ,ッコ,kko,接尾辞-名詞的-一般,1
-どころ,ドコロ,dokoro,助詞-副助詞,1
 つまずい,ツマズイ,tsumazui,動詞-一般,1
 だっ,ダッ,datsu,動詞-一般,1
 だっ,ダッ,datsu,副詞,1
@@ -128,7 +125,6 @@ surface,reading,romaji,pos,frequency
 へぇ,ヘー,hee,感動詞-一般,1
 ふん,フン,fun,感動詞-一般,1
 びっくり,ビックリ,bikkuri,名詞-普通名詞-サ変可能,1
-にて,ニテ,nite,助詞-格助詞,1
 くい,クイ,kui,名詞-普通名詞-一般,1
 刻む,キザム,kizamu,動詞-一般,1
 刻ま,キザマ,kizama,動詞-一般,1
