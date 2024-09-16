@@ -30,5 +30,8 @@ pull requests so I'd like to commit the raw ugly data here so we can all inovate
 include english words, symbols, punctuation, etc.
 
 ## Step 3 - Filtering
+Filtered files will be stored in data/filtered/{show}/{episode_name}.srt.csv
 
+Anything wierd like english words, symbols, punctuation, etc will be removed.
+Each file after the first will only have words that haven't appeared in previous files for the show.
 
