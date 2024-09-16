@@ -10,7 +10,7 @@ incremental Anki decks for following shows.  The first show I'm going to use to 
 ### Naruto
 | Episode | Words | Deck Link
 |---------|-------|----------
-| 1 | 695
+| 1 | 695 | [Naruto (1).srt.apkg](data/decks/Naruto/Naruto%20(1).srt.apkg)
 | 2 | 370
 | 3 | 287
 | 4 | 271
@@ -64,3 +64,6 @@ with a single word translation, a longer more detailed translation, use the word
 surface,reading,romaji,pos,frequency,short_translation,detailed_translation,used_in_sentence
 
 ### Step 5 - Audio Generation
+Use openai to generate an audio file for each reading
+
+### Step 6 - Anki card generation
