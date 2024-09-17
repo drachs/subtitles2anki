@@ -38,7 +38,7 @@ def load_manifest(show):
         return f.read().splitlines()
 
 # translate
-def translate(surface, pos):
+def oai_translate(surface, pos):
     prompt = pos_prompt + pos + word_prompt + surface
     completion = client.beta.chat.completions.parse(
         model="gpt-4o-2024-08-06",  # Use the appropriate model
@@ -50,7 +50,32 @@ def translate(surface, pos):
     if message.parsed is None:
         return None
 
-    return pd.Series([message.parsed.short_translation, message.parsed.detailed_translation, message.parsed.used_in_sentence])
+    return pd.Series([message.parsed.short_translation, message.parsed.detailed_translation, message.parsed.used_in_sentence, message.parsed.english_pos])
+
+# Rertrieve from cache if available
+def cache_translate(surface, pos):
+    try:
+        ret = pd.read_csv(f"translation_cache/{surface}-{pos}.csv", header=None).squeeze("columns")
+        if len(ret) != 4:
+            return None
+        return ret
+    except:
+        return None
+
+def save_cache(surface, pos, data):
+    data.to_csv(f"translation_cache/{surface}-{pos}.csv", index=False, header=False)
+
+def translate(surface, pos):
+    ret = cache_translate(surface, pos)
+    if ret is not None:
+        print(f"Retrieved {surface}-{pos} from cache")
+        return ret
+
+    ret = oai_translate(surface, pos)
+    save_cache(surface, pos, ret)
+
+    print(f"Generated {surface}-{pos}")
+    return ret
 
 from pydantic import BaseModel
 class Translation(BaseModel):
@@ -85,9 +110,7 @@ for file in files:
     print(f"Enriching {load_filename} and saving to {save_filename}")
     
     df = pd.read_csv(load_filename)
-    df[['short_translation', 'detailed_translation', 'used_in_sentence']] = df.apply(
-    lambda row: translate(row['surface'], row['pos']), axis=1
-    )
+    df[['short_translation', 'detailed_translation', 'used_in_sentence', 'english_pos']] = df.apply(lambda row: translate(row['surface'], row['pos']), axis=1)
 
     df.to_csv(save_filename, index=False)
 

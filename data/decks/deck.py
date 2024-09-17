@@ -13,7 +13,7 @@ import genanki
 model_id = 1429503998
 my_model = genanki.Model(
   model_id,
-  'Japanese Vocabulary Model',
+  'Sutanki Immersion',
   fields=[
     {'name': 'Surface'},
     {'name': 'Reading'},
@@ -70,7 +70,7 @@ files = load_manifest(show)
 for file in files:
     load_filename = f"../enriched/{show}/{file}.csv"
     save_filename = f"{show}/{file}.apkg"
-    deck_id = (hash(save_filename)%100000000)+(1 << 30)+10000
+    deck_id = 1241591403 # Random number, same for all decks so they'll merge
 
     # If load_filename does not exist, exit
     if not os.path.exists(load_filename):
@@ -81,7 +81,7 @@ for file in files:
     
     df = pd.read_csv(load_filename)
 
-    my_deck = genanki.Deck(deck_id, f"{show} - {file}")
+    my_deck = genanki.Deck(deck_id, f"Sutanki Immersion")
 
     audio_files = []
     for index, row in df.iterrows():
@@ -96,7 +96,7 @@ for file in files:
 
         my_note = genanki.Note(
           model=my_model,
-          fields=[row['surface'], row['reading'], row['romaji'], row['used_in_sentence'], audio, row['short_translation'], row['detailed_translation']],
+          fields=[row['surface'], row['reading'], row['romaji'], row['used_in_sentence'], audio, str(row['short_translation']), row['detailed_translation']],
           guid=note_guid
         )
         my_deck.add_note(my_note)

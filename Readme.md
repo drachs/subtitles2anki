@@ -1,4 +1,4 @@
-# Anki Card Generator for Arbitrary Subtitles
+# Sutanki Immersion - Anki Card Generator for Arbitrary Subtitles
 
 I am writing this as I try to get into immersion while studing Japanese.  I am very new to Japanese, so I'm sure this could be 
 improved by help from people with more experience.
@@ -7,6 +7,8 @@ The goal here is to facilitate my ability to watch a show in Japanese by generat
 incremental Anki decks for following shows.  The first show I'm going to use to experiment with is the origional Naruto.
 
 ## Existing Decks
+
+[Deck Folders](https://github.com/drachs/subtitles2anki/tree/main/data/decks)
 ### Naruto
 | Episode | Words | Deck Link
 |---------|-------|----------
@@ -28,10 +30,12 @@ incremental Anki decks for following shows.  The first show I'm going to use to 
 
 ## Todo
 * ~~Eliminate Particles - I don't think flashcards are a good way to learn particles and it's very unsatisfying~~
-* Add the sentence to the voice
-* Record the sentence globally for every reading-pos pair so that it always matches the recorded voice
-* remove duplicates of reading-pos
-* updating a deck adds all the modified cards as new cards
+* ~~Add the sentence to the voice~~
+* ~~Global caches for AI generation based on reading-pos indexing~~
+* ~~remove duplicates of reading-pos~~
+* ~~updating a deck adds all the modified cards as new cards~~
+* ~~Better control generation of audio as word[pause]sentence[pause]word~~
+* Build decks for the first 10 episodes of Naruto
 
 ## Deck Generation
 
