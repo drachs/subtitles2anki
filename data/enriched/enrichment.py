@@ -50,6 +50,12 @@ def oai_translate(surface, pos):
     if message.parsed is None:
         return None
 
+    if message.parsed.short_translation is None or message.parsed.detailed_translation is None or message.parsed.used_in_sentence is None or message.parsed.english_pos is None:    
+        return None
+
+    if message.parsed.short_translation == "" or message.parsed.detailed_translation == "" or message.parsed.used_in_sentence == "" or message.parsed.english_pos == "":
+        return None
+
     return pd.Series([message.parsed.short_translation, message.parsed.detailed_translation, message.parsed.used_in_sentence, message.parsed.english_pos])
 
 # Rertrieve from cache if available
@@ -71,7 +77,17 @@ def translate(surface, pos):
         print(f"Retrieved {surface}-{pos} from cache")
         return ret
 
-    ret = oai_translate(surface, pos)
+    count = 0
+    while count < 3:
+        ret = oai_translate(surface, pos)
+        count += 1
+        if ret is not None:
+            break
+
+    if ret is None:
+        print(f"Failed to translate {surface}-{pos}")
+        return None
+
     save_cache(surface, pos, ret)
 
     print(f"Generated {surface}-{pos}")
