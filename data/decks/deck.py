@@ -36,6 +36,7 @@ my_model = genanki.Model(
         {{FrontSide}}
         <hr id="answer">
         <div class="short-answer">{{ShortTranslation}}</div>
+        <br><br>
         <div class="detailed-answer">{{DetailedTranslation}}</div>
       ''',
     },
@@ -91,9 +92,12 @@ for file in files:
                 print(f"Could not find {audio_filename}")
             audio_files.append(audio_filename)
 
+        note_guid = genanki.guid_for(row['reading'], row['pos'])
+
         my_note = genanki.Note(
           model=my_model,
-          fields=[row['surface'], row['reading'], row['romaji'], row['used_in_sentence'], audio, row['short_translation'], row['detailed_translation']]
+          fields=[row['surface'], row['reading'], row['romaji'], row['used_in_sentence'], audio, row['short_translation'], row['detailed_translation']],
+          guid=note_guid
         )
         my_deck.add_note(my_note)
 
