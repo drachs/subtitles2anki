@@ -104,5 +104,4 @@ for file in files:
     package = genanki.Package(my_deck)
     package.media_files = audio_files
     package.write_to_file(save_filename)
-    break
 

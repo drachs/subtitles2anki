@@ -28,9 +28,6 @@ client = OpenAI(api_key = openai_key)
 show = sys.argv[1]
 files = load_manifest(show)
 
-max_files = 1000
-current_files = 0
-
 for file in files:
     load_filename = f"../enriched/{show}/{file}.csv"
     
@@ -96,12 +93,6 @@ for file in files:
         combined_audio = reading_audio + pause_audio + sentence_audio + pause_audio + reading_female_audio
         combined_audio.export(save_filename, format="mp3")
 
-        print(f"Generated {save_filename}")
-
-        current_files += 1
-        if current_files >= max_files:
-            print("Reached max files, only doing {max_files} files per run")
-            sys.exit(0)
-    
+        print(f"Generated {save_filename}")    
 
 

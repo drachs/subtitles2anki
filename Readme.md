@@ -32,7 +32,8 @@ If you want me to cook a deck for you please feel free to file an issue with ins
 ### Step 1 - Subtitles are obtained and stationed in the subtitles folder
 Subtitles are stationed in data/subtitles/{show}
 
-These subtitles will not be included in the repo because they could potentially be copyrighted.  There will be a manifest file however.
+These subtitles will not be included in the repo because they could potentially be copyrighted.  There will be a manifest file however that
+lists the subtitles in order and all future operations use that manifest as a guide.
 
 ### Step 2 - Subtitles are tokenized into a non-copyrightable raw format
 These tokenized files will be stored in data/tokenized/{show}/{episode_name}.srt.csv
@@ -61,6 +62,8 @@ Each file after the first will only have words that haven't appeared in previous
 ### Step 4 - AI Enrichment
 Here we're using a GPT-4o to further enrich the data.  We're going to ask it to remove anything it thinks is wierd, as well as provide us 
 with a single word translation, a longer more detailed translation, use the word in a sentence, and translate the part of speech.
+
+Translations are cached according to reading-pos in the translation_cache folder
 
 surface,reading,romaji,pos,frequency,short_translation,detailed_translation,used_in_sentence
 

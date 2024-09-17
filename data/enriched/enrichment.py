@@ -96,7 +96,7 @@ client = OpenAI(api_key = openai_key)
 show = sys.argv[1]
 files = load_manifest(show)
 
-max_files = 1
+max_files = 4
 current_files = 0
 
 for file in files:
