@@ -28,6 +28,10 @@ incremental Anki decks for following shows.  The first show I'm going to use to 
 
 ## Todo
 * ~~Eliminate Particles - I don't think flashcards are a good way to learn particles and it's very unsatisfying~~
+* Add the sentence to the voice
+* Record the sentence globally for every reading-pos pair so that it always matches the recorded voice
+* remove duplicates of reading-pos
+* updating a deck adds all the modified cards as new cards
 
 ## Deck Generation
 

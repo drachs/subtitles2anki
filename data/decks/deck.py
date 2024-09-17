@@ -46,7 +46,6 @@ my_model = genanki.Model(
       font-size: 30px;
       text-align: center;
       color: black;
-
       }
 
     .short-answer {
@@ -85,8 +84,8 @@ for file in files:
 
     audio_files = []
     for index, row in df.iterrows():
-        audio = f"[sound:{row['reading']}.mp3]"
-        audio_filename = f"../audio/files/{row['reading']}.mp3"
+        audio = f"[sound:{row['reading']}-{row['pos']}.mp3]"
+        audio_filename = f"../audio/files/{row['reading']}-{row['pos']}.mp3"
         if audio_filename not in audio_files:
             if not os.path.exists(audio_filename):
                 print(f"Could not find {audio_filename}")
