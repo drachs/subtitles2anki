@@ -4,29 +4,19 @@ I am writing this as I try to get into immersion while studing Japanese.  I am v
 improved by help from people with more experience.
 
 The goal here is to facilitate my ability to watch a show in Japanese by generating an Anki deck for the show, and to generate
-incremental Anki decks for following shows.  The first show I'm going to use to experiment with is the origional Naruto.
+incremental Anki decks for following shows.
+
+The idea is that I can pull all these decks up online and if you want to watch Naruto you can grab Naruto episode one and work that deck until you're ready to watch the show.  Then watch the show, and merge in episode 2.  Each deck will be fully modular and the GUIDS will be stable so you can merge a new show into your deck at any time, and not have to relearn cards you already know. 
+
+I hope it will be a fun way for people to do immersion.
+
+If you want me to cook a deck for you please feel free to file an issue with instructions on how to find subtitles for the show and I'll include it here.
+
+(Warning, pretty hot of the presses - probably buggy, maybe garbage - please provide feedback)
 
 ## Existing Decks
 
 [Deck Folders](https://github.com/drachs/subtitles2anki/tree/main/data/decks)
-### Naruto
-| Episode | Words | Deck Link
-|---------|-------|----------
-| 1 | 695 | [Naruto (1).srt.apkg](data/decks/Naruto/Naruto%20(1).srt.apkg)
-| 2 | 370
-| 3 | 287
-| 4 | 271
-| 5 | 183
-| 6 | 289
-| 7 | 201
-| 8 | 124
-| 9 | 84
-| 10 | 254
-| 11 | 171
-| 12 | 101
-| 13 | 90
-| 14 | 141
-| 15 | 96
 
 ## Todo
 * ~~Eliminate Particles - I don't think flashcards are a good way to learn particles and it's very unsatisfying~~
