@@ -27,35 +27,77 @@ my_model = genanki.Model(
     {
       'name': 'Card 1',
       'qfmt': '''
-        <div>{{Surface}}</div>
-        <div>{{Reading}} / {{Romaji}}</div>
-        <div>{{Sentence}}</div>
-        <div>{{Audio}}</div>
-      ''',
+        <div class="box">
+          <div class="label">Surface</div>
+          <div>{{Surface}}</div>
+        </div>
+
+        <div class="box">
+          <div class="label">Reading / Romaji</div>
+          <div>{{Reading}} / {{Romaji}}</div>
+        </div>
+
+        <div class="box">
+          <div class="label">Sentence</div>
+          <div>{{Sentence}}</div>
+        </div>
+
+        <div class="box">
+          <div class="label">Audio</div>
+          <div>{{Audio}}</div>
+        </div>
+        ''',
       'afmt': '''
         {{FrontSide}}
         <hr id="answer">
-        <div class="short-answer">{{ShortTranslation}}</div>
-        <br><br>
-        <div class="detailed-answer">{{DetailedTranslation}}</div>
-      ''',
+
+        <div class="box">
+          <div class="label">Short Translation</div>
+          <div class="short-answer">{{ShortTranslation}}</div>
+        </div>
+
+        <div class="box">
+          <div class="label">Detailed Translation</div>
+          <div class="detailed-answer">{{DetailedTranslation}}</div>
+        </div>
+        ''',
     },
   ],
   css='''
     .card {
-      font-family: arial;
+      font-family: Arial, sans-serif;
       font-size: 30px;
       text-align: center;
-      color: black;
-      }
+      color: #333;
+      background-color: #f0f8ff; /* Light blue background of the card */
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    /* Setting the background outside the card */
+    body {
+      background-color: white;
+    }
+
+    .box {
+      background-color: #e6f7ff; /* Light blue box color */
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #b3e0ff; /* Light blue border */
+    }
+
+    .label {
+      font-weight: bold;
+      color: #007acc; /* Darker blue color */
+      margin-bottom: 5px;
+    }
 
     .short-answer {
       font-size: 40px;
       font-weight: bold;
-    }
-
-    .detailed-answer {
-      color: blue;
+      color: #007acc; /* Darker blue */
     }
   ''',
 )

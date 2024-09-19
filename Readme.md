@@ -25,7 +25,15 @@ If you want me to cook a deck for you please feel free to file an issue with ins
 * ~~remove duplicates of reading-pos~~
 * ~~updating a deck adds all the modified cards as new cards~~
 * ~~Better control generation of audio as word[pause]sentence[pause]word~~
+* Get the AI to produce simpler example sentences
+* Do a nice layout design for the deck
+* Add the english part of speech to the deck
 * Build decks for the first 10 episodes of Naruto
+* Build decks for the first episode of the 10 most popular anime series
+* Upload an example deck for each series to ankiweb
+* Establish a website
+* Sometimes the sentence produced doesn't match the reading - for example the word Mono 者 has two readings
+
 
 ## Deck Generation
 
@@ -68,6 +76,9 @@ Translations are cached according to reading-pos in the translation_cache folder
 surface,reading,romaji,pos,frequency,short_translation,detailed_translation,used_in_sentence
 
 ### Step 5 - Audio Generation
-Use openai to generate an audio file for each reading
+Use openai to generate an audio file for each reading.
+
+Audio files are cached according to reading.pos in the audio folder.
 
 ### Step 6 - Anki card generation
+Data from the above steps is combined into Anki cards.

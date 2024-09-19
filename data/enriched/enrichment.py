@@ -27,7 +27,7 @@ Your output should be json and look like this:
 short_translation: Contains a short one or two word english translation.
 english_pos: Contains the part of speech in english.
 detailed_translation: Contains a more detailed explanation of the translation in english with possible additional meanings.
-used_in_sentence: Contains a japanese languge sentence where the word is used.
+used_in_sentence: Contains a japanese languge sentence where the word is used.  Do not translate this sentence, it must appear only in japanese.
 
 Here is the part of speech: """
 
